@@ -1,9 +1,10 @@
+const express = require('express');
 let number = 0;
 
-app.route("/guestbook")
-  .get((req, res) => {
-      number++;
-      res.send('Du är besökare nr ' + number)
-  })
+const guestbookGet = (req, res) => {
+  console.log('Guestbook');
+  number++
+  res.send('Välkommen, du är besökare nr ' + number + '.');
+}
 
-export default guestbook();
+module.exports = guestbookGet;
